@@ -1,0 +1,89 @@
+ion-content{
+  --ion-background-color: white; 
+}
+
+ion-toolbar{
+  --ion-background-color: transparent; 
+  --opacity:0; 
+}
+
+ion-card-title{
+  margin-top: 100px;
+  font-size: 25px;
+  color: #3A5199;
+  text-align: center;
+  font-weight: bold;
+  font-weight: 600;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+ion-card-subtitle{
+  padding-top: 15px;
+  font-size: 11px;
+  color: grey;
+  text-align: center;
+  font-weight: 300;
+
+}
+
+ion-header{
+  position: absolute;
+}
+
+ion-card{
+  --ion-background-color: transparent; 
+box-shadow: none !important;
+
+}
+
+.signin-btns{
+  margin-top: 25px;
+  text-align: center;
+  --ion-color-primary: #8593AE; 
+
+}
+
+.loginbtn{
+  --ion-color-primary: #8593AE; 
+  font-weight: bold;
+
+}
+
+
+.text-tag{
+  margin-top: 40px;
+  text-align: center;
+  span{
+    font-size: 13px;
+    font-weight: bold;
+    color: #8593AE;
+  }
+}
+
+.social-btns{
+  margin-top: 30px;
+  text-align: center;
+  ion-button{
+    width: 40px;
+    padding-left: 5px !important; 
+  }
+
+}
+
+.book_portada{
+  width: 60%;
+  height: 60%;
+  margin-left: 90px;
+  padding-top: 50px;
+}
+
+.ion-text{
+  text-align: center;
+  color: #8593AE;
+}
+
+.book_portada_2{
+  width: 30%;
+  height: 30%;
+  
+}

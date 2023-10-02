@@ -1,0 +1,74 @@
+ <ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login" text="">
+    </ion-back-button>
+    </ion-buttons>  
+    <div class="book_portada">
+      <ion-img src="assets/imagenes/book.gif"></ion-img>
+  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-color">
+
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-subtitle>
+        Crea tu cuenta rellenando el Formulario
+      </ion-card-subtitle>
+      <ion-card-title>
+        Registro
+      </ion-card-title>
+    </ion-card-header>
+
+  <ion-card-content>
+    <form [formGroup]="formularioRegistro"  (keyup.enter)="guardar()">
+    <ion-item>
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-input formControlName="nombre" placeholder="Nombre de Usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <ion-input formControlName="password" type="password" placeholder="Contraseña"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <ion-input formControlName="confirmacionPassword" type="password" placeholder="Repetir contraseña" ></ion-input>
+    </ion-item>
+    <br>
+    <div class="sign-btn-wrap">
+      <ion-button (click)="guardar()" shape="round" fill="solid" class="sign-btn"> Registrar </ion-button>
+  </div>
+</form>
+  
+  <div class="text-tag">
+    <span> Registrate con: </span>
+      </div>
+
+      <div class="social-btns">
+        <ion-button fill="clear" shape="round" class="facebookbtn ion-no-padding">
+          <ion-img src="assets/imagenes/facebook.png"></ion-img> 
+        </ion-button>
+
+        <ion-button fill="clear" shape="round" class="googlebtn ion-no-padding">
+          <ion-img src="assets/imagenes/google.png"></ion-img> 
+        </ion-button>
+
+        <ion-button fill="clear" shape="round" class="applebtn ion-no-padding">
+          <ion-img src="assets/imagenes/apple.png"></ion-img> 
+        </ion-button>
+        
+    </div>
+
+  </ion-card-content>
+
+
+  </ion-card>
+ 
+
+</ion-content>
+
+
