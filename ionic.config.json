@@ -1,0 +1,8 @@
+{
+  "name": "booksverser",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "19b15a70"
+}
