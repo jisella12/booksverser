@@ -16,10 +16,11 @@ export class AppComponent {
   public appPages = [
     { title: 'Inicio', url: 'inicio', icon: 'home' },
     { title: 'Libros', url: 'producto', icon: 'book' },
-    { title: 'Favoritos', url: '/folder/Favoritos', icon: 'heart' },
+    { title: 'Favoritos', url: 'rating', icon: 'heart' },
     { title: 'Mi Cuenta', url: '/folder/Mi Cuenta', icon: 'person' }, 
     { title: 'Carrito', url: '/folder/Carro', icon: 'cart' },
     { title: 'Login', url: 'login', icon: 'log-in' },
+    
    
     
     /* { title: 'Archived', url: '/folder/archived', icon: 'archive' },
