@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {register} from 'swiper/element/bundle'; 
+register ();
 
 @Component({
   selector: 'app-root',
@@ -12,9 +14,14 @@ export class AppComponent {
   
 
   public appPages = [
-    { title: 'Login', url: '/folder/login', icon: 'log-in' },
-    { title: 'Registro', url: '/folder/registro', icon: 'reader' },
-    { title: 'Libros', url: '/folder/producto', icon: 'book' },
+    { title: 'Inicio', url: 'inicio', icon: 'home' },
+    { title: 'Libros', url: 'producto', icon: 'book' },
+    { title: 'Favoritos', url: '/folder/Favoritos', icon: 'heart' },
+    { title: 'Mi Cuenta', url: '/folder/Mi Cuenta', icon: 'person' }, 
+    { title: 'Carrito', url: '/folder/Carro', icon: 'cart' },
+    { title: 'Login', url: 'login', icon: 'log-in' },
+   
+    
     /* { title: 'Archived', url: '/folder/archived', icon: 'archive' },
     { title: 'Trash', url: '/folder/trash', icon: 'trash' },
     { title: 'Spam', url: '/folder/spam', icon: 'warning' }, */

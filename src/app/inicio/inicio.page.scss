@@ -1,0 +1,19 @@
+swiper-container {
+    width: 100%;
+    height: 35%;
+}
+swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ion-icon {
+    font-size: 64px;
+}
+ion-card {
+    text-align: center;
+}
+ion-title {
+    text-align: center;
+}

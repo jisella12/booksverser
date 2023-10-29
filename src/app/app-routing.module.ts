@@ -26,7 +26,7 @@ const routes: Routes = [
   {
     path: 'producto',
     loadChildren: () => import('./producto/producto.module').then( m => m.ProductoPageModule),
-    canActivate: [IngresadoGuard]
+    canActivate: [IngresadoGuard] 
   },
   {
     path: 'splashscreen',
@@ -35,11 +35,12 @@ const routes: Routes = [
   {
     path: 'rating',
     loadChildren: () => import('./rating/rating.module').then( m => m.RatingPageModule)
-  },
-  {
+  },  {
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   },
+
+ 
 
 
 ];

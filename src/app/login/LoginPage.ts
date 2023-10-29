@@ -36,8 +36,8 @@ export class LoginPage implements OnInit {
       // Verificar las credenciales del usuario
       if (usuario.nombre == f.nombre && usuario.password == f.password) {
         console.log('Ingresado');
-        localStorage.setItem('ingresado', 'true');
-        this.navCtrl.navigateRoot('producto');
+        localStorage.setItem('Ingresado', 'true');
+        this.navCtrl.navigateRoot('inicio');
       } else {
         const alert = await this.alertController.create({
           header: 'Datos incorrectos',
