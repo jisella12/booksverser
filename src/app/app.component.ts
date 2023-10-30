@@ -20,7 +20,7 @@ export class AppComponent {
     { title: 'Mi Cuenta', url: '/folder/Mi Cuenta', icon: 'person' }, 
     { title: 'Carrito', url: '/folder/Carro', icon: 'cart' },
     { title: 'Login', url: 'login', icon: 'log-in' },
-    
+    { title: 'Registro', url: 'registro', icon: 'log-in' },
    
     
     /* { title: 'Archived', url: '/folder/archived', icon: 'archive' },
@@ -30,4 +30,5 @@ export class AppComponent {
   public labels = [];
   menuCtrl: any;
   constructor() {}
+  
 }
