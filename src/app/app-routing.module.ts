@@ -35,9 +35,15 @@ const routes: Routes = [
   {
     path: 'rating',
     loadChildren: () => import('./rating/rating.module').then( m => m.RatingPageModule)
-  },  {
+  },
+  {
     path: 'inicio',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'edit-libro/:id',
+    loadChildren: () => import('./edit-libro/edit-libro.module').then( m => m.EditLibroPageModule),
+    canActivate:[IngresadoGuard]
   },
 
  

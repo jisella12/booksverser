@@ -1,63 +1,103 @@
 <ion-header>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <ion-toolbar>
-    <ion-title>Reading Journal</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="inicio" text="">
+    </ion-back-button>
+  </ion-buttons> 
+    <ion-title >Reading Journal</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
   <ion-card>
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <img alt="Silhouette of mountains" src="assets/imagenes/bookverse.png" width="300" height="300" style="padding-left: 100px;"/>
   </ion-card>
 
   
-  <ion-item>
-    <ion-label position="stacked">Clasificacíon</ion-label>
-    <div class="container" >
-     <div class="rating">
-      <input type="radio" name="clr1" style="--c:#ff9933">
-      <input type="radio" name="clr1" style="--c:#ff9933">
-      <input type="radio" name="clr1" style="--c:#ff9933">
-      <input type="radio" name="clr1" style="--c:#ff9933">
-      <input type="radio" name="clr1" style="--c:#ff9933">
+ 
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title >Agregar Reseña</ion-card-title>
+    </ion-card-header>
+    <ion-item>
+      <ion-label position="floating" >Titulo</ion-label>
+      <ion-input [(ngModel)]="libro.titulo" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" >Autor</ion-label>
+      <ion-input [(ngModel)]="libro.autor" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" >Cita Favorita</ion-label>
+      <ion-input [(ngModel)]="libro.cita"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" >Reseña</ion-label>
+      <ion-input [(ngModel)]="libro.resena"></ion-input>
+    </ion-item>
+   <!--  <ion-item>
+      <ion-label position="stacked">Calificación</ion-label>
+      <br>
+      <div class="container" >
+       <div class="rating">
+        <input type="radio" name="clr1" style="--c:#ff9933">
+        <input type="radio" name="clr1" style="--c:#ff9933">
+        <input type="radio" name="clr1" style="--c:#ff9933">
+        <input type="radio" name="clr1" style="--c:#ff9933">
+        <input type="radio" name="clr1" style="--c:#ff9933">
+      </div>
     </div>
-  </div>
-  </ion-item>
+    </ion-item> -->
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="block"  color="secondary" shape="round">
+            Limpiar
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="block" (click)="addLibro()" color="primary" shape="round">
+            Agregar Libro
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-row *ngFor="let libro of libros">
+    <ion-col class="ion-text-center">
+      <ion-card>
+        <ion-col size="12">
+          <ion-card-header>
+            <ion-card-title>{{libro.titulo}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Autor:{{libro.autor}}
+            <br>
+            Cita Favorita:{{libro.cita}}
+            <br>
+            Reseña:{{libro.resena}} 
+          </ion-card-content>
+        </ion-col>
+        <ion-row>
+          <ion-col size="6"> 
+            <ion-button color="primary" [routerLink]="['/edit-libro', libro.id]" (click)="getLibroId(libro.id)" expand="block"  shape="round">Editar</ion-button>  
+          </ion-col>
+          <ion-col size="6"> 
+            <ion-button  expand="block" (click)="deleteLibro(libro.id)" shape="round" color="secondary" >Borrar</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
+
+
+
   
 
-  <ion-list>
-    <ion-item>
-      <ion-label position="stacked">Título</ion-label>
-      <ion-input type="text" ></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="stacked">Autor</ion-label>
-      <ion-input type="text" ></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="stacked">Fecha de Comienzo</ion-label>
-      <ion-input type="date" ></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="stacked">Fecha de Fin</ion-label>
-      <ion-input type="date" ></ion-input>
-    </ion-item>
-
-
-    <ion-item>
-      <ion-label position="stacked">Cita Favorita</ion-label>
-      <ion-textarea ></ion-textarea>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="stacked">Reseña</ion-label>
-      <ion-textarea ></ion-textarea>
-    </ion-item>
-  </ion-list>
-
-  <ion-button expand="full" >Guardar</ion-button>
-</ion-content>
+  
