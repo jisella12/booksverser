@@ -17,11 +17,21 @@ export class InicioPage implements OnInit {
     'https://i.pinimg.com/564x/4e/bd/8a/4ebd8a8b49964eacded5e3e0cb9bdcc7.jpg',
     'https://i.pinimg.com/564x/61/92/ea/6192eac97639d8aa8fc4eb7f86019bcf.jpg',
   ];
-  router: any;
-
-
-
-  constructor() { }
+ 
+  constructor(private activateRoute: ActivatedRoute, private router: Router) { 
+    this.activateRoute.queryParams.subscribe(() => {
+      if (this.router.getCurrentNavigation()?.extras.state) {
+        this.data = this.router.getCurrentNavigation()?.extras.state?.['user'];
+        console.log(this.data);
+      }else{
+        this.router.navigate(["/inicio"]);
+      }
+    });
+    
+  }
+  data(data: any) {
+    throw new Error('Method not implemented.');
+  }
   swiperReady() {
     this.swiper = this.swiperRef?.nativeElement.swiper;
   }
@@ -31,15 +41,11 @@ export class InicioPage implements OnInit {
   swiperSlideChanged(e: any) {
     console.log('changed: ', e);
   }
-  /* cerrarSesion(){
-    localStorage.removeItem('ingresado');
-    this.router.navigate(["/inicio"]);
-  } */
   cerrarSesion(){
     localStorage.removeItem('ingresado');
     this.router.navigate(["/home"]);
-
   }
+  
 
   ngOnInit(): void {
   }
